@@ -1,6 +1,6 @@
 {
   "name": "cordova-plugin-ubibot-camera-stream",
-  "version": "0.0.2",
+  "version": "1.0.1",
   "description": "ubibot-camera-stream",
   "cordova": {
     "id": "cordova-plugin-ubibot-camera-stream",
@@ -10,5 +10,10 @@
     "ecosystem:cordova","cordova-ios","cordova","plugin","ubibot"
   ],
   "author": "david",
+  "homepage": "https://github.com/david120383/ubibot-camera-stream/blob/master/README.md",
+  "repository": {
+      "type": "git",
+      "url": "https://github.com/david120383/ubibot-camera-stream"
+  },
   "license": "ISC"
 }
