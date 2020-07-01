@@ -15,9 +15,9 @@
   // Member variables go here.
 }
 
-- (void)start:(CDVInvokedUrlCommand*)command;
-- (void)stop:(CDVInvokedUrlCommand*)command;
-- (void)getversion:(CDVInvokedUrlCommand*)command;
+- (void)getCameraStream:(CDVInvokedUrlCommand*)command;
+- (void)stopCameraStream:(CDVInvokedUrlCommand*)command;
+- (void)getVersion:(CDVInvokedUrlCommand*)command;
 @end
 
 @implementation ubibot
@@ -28,20 +28,18 @@ bool bolCheck = false;
 static ubibot* native;
 static NSString *_callbackID;
 
-- (void)getversion:(CDVInvokedUrlCommand*)command{
+- (void)getVersion:(CDVInvokedUrlCommand*)command{
     CDVPluginResult* pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:@"1.0.2"];
-//     [pluginResult setKeepCallbackAsBool:YES];
     [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
 }
 
-- (void)stop:(CDVInvokedUrlCommand*)command{
+- (void)stopCameraStream:(CDVInvokedUrlCommand*)command{
     bolCheck = true;
     CDVPluginResult* pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:@"stop"];
-//     [pluginResult setKeepCallbackAsBool:YES];
     [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
 }
 
-- (void)start:(CDVInvokedUrlCommand*)command{
+- (void)getCameraStream:(CDVInvokedUrlCommand*)command{
     bolCheck = false;
     NSArray *arguments = [command.arguments objectAtIndex:0];
     if(arguments != nil && arguments.count == 3){
@@ -50,9 +48,7 @@ static NSString *_callbackID;
         NSString *UID = arguments[0];
         NSString *account = arguments[1];
         NSString *password = arguments[2];
-//         NSLog(@"STEP 1");
         [self start:UID account:account password:password];
-//         NSLog(@"STEP 2");
     }else{
         CDVPluginResult* pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:@"arguments is error"];
         [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
@@ -61,19 +57,15 @@ static NSString *_callbackID;
 
 - (pthread_t)start:(NSString *)UID account:(NSString *)account password:(NSString *)password {
     bolCheck = false;
-    //    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(receiveVideoThread:) name:@"stopstop" object:nil];
-//    NSLog(@"start UID:%@", UID);
-//    NSLog(@"start account:%@", account);
-//    NSLog(@"start password:%@", password);
     mUID = UID;
     mAccount = account;
     mPassword = password;
     pthread_t main_thread;
-    NSLog(@"STEP 3");
+//     NSLog(@"STEP 3");
     pthread_create(&main_thread, NULL, &start_main, NULL);
-    NSLog(@"STEP 4");
+//     NSLog(@"STEP 4");
     pthread_detach(main_thread);//即主线程与子线程分离，子线程结束后，资源自动回收。
-    NSLog(@"STEP 5");
+//     NSLog(@"STEP 5");
     return main_thread;
 }
 

@@ -32,19 +32,19 @@ if (isAndroid == true) {
   arr = ['***', '***', '***'];
 }
 // start get camera stream
-cordova.plugins.ubibot.start(arr, res => {
+cordova.plugins.ubibot.getCameraStream(arr, res => {
   console.log(res);
 }, err => {
   console.log(err);
 });
 // stop get camera stream
-cordova.plugins.ubibot.stop('stop', res => {
+cordova.plugins.ubibot.stopCameraStream('stopCameraStream', res => {
   console.log(res);
 }, err => {
   console.log(err);
 });
 // get version
-cordova.plugins.ubibot.getversion('getversion', res => {
+cordova.plugins.ubibot.getVersion('getVersion', res => {
   console.log(res);
 }, err => {
   console.log(err);

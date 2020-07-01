@@ -1,13 +1,13 @@
 var exec = require('cordova/exec');
 
-exports.start = function (arg0, success, error) {
-    exec(success, error, 'ubibot', 'start', [arg0]);
+exports.getCameraStream = function (arg0, success, error) {
+    exec(success, error, 'ubibot', 'getCameraStream', [arg0]);
 };
 
-exports.stop = function (arg0, success, error) {
-    exec(success, error, 'ubibot', 'stop', [arg0]);
+exports.stopCameraStream = function (arg0, success, error) {
+    exec(success, error, 'ubibot', 'stopCameraStream', [arg0]);
 };
 
-exports.getversion = function (arg0, success, error) {
-    exec(success, error, 'ubibot', 'getversion', [arg0]);
+exports.getVersion = function (arg0, success, error) {
+    exec(success, error, 'ubibot', 'getVersion', [arg0]);
 };
