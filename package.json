@@ -1,13 +1,13 @@
 {
   "name": "cordova-plugin-ubibot-camera-stream",
-  "version": "0.0.1",
-  "description": "",
+  "version": "0.0.2",
+  "description": "ubibot-camera-stream",
   "cordova": {
     "id": "cordova-plugin-ubibot-camera-stream",
-    "platforms": []
+    "platforms": ["iOS","Android"]
   },
   "keywords": [
-    "ecosystem:cordova"
+    "ecosystem:cordova","cordova-ios","cordova","plugin","ubibot"
   ],
   "author": "david",
   "license": "ISC"
