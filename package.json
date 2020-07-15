@@ -1,6 +1,6 @@
 {
   "name": "cordova-plugin-ubibot-camera-stream",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "ubibot-camera-stream",
   "cordova": {
     "id": "cordova-plugin-ubibot-camera-stream",

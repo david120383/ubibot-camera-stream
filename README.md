@@ -23,14 +23,9 @@ cordova plugin add https://github.com/david120383/ubibot-camera-stream.git
 ## Methods
 
 ```javascript
-const u = navigator.userAgent;
-const isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1;
-const isIOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/);
-if (isAndroid == true) {
-  arr = '***|***|***';
-} else if (isIOS == true) {
-  arr = ['***', '***', '***'];
-}
+// [UID,account,pwd]
+let arr = ['***', '***', '***'];
+
 // start get camera stream
 cordova.plugins.ubibot.getCameraStream(arr, res => {
   console.log(res);

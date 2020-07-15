@@ -29,7 +29,7 @@ static ubibot* native;
 static NSString *_callbackID;
 
 - (void)getVersion:(CDVInvokedUrlCommand*)command{
-    CDVPluginResult* pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:@"1.0.2"];
+    CDVPluginResult* pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:@"1.0.3"];
     [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
 }
 
